@@ -1,11 +1,11 @@
-<h1 align="center">💰 Stock Market Prediction App using Facebook Prophet 💸</h1>
+<h1 align="center">💰 Stock Market Prediction App using Prophet 💸</h1>
 
 <p align="center">
   <img src="image/Stock_market.jpeg" alt="Stock Market Prediction" width="600"/>
 </p>
 
-<p align="center">
-  Welcome to the Stock Market Prediction using Facebook Prophet project! This repository contains code and resources for predicting stock market trends using the Facebook Prophet model. With Prophet's **decomposable model** (trend + seasonality + holidays), we aim to forecast stock prices and assist in making informed investment decisions.
+<p>
+  Welcome to the Stock Market Prediction using Facebook Prophet project! This repository contains code and resources for predicting stock market trends using the Facebook Prophet model. With Prophet's <strong>decomposable model</strong> (trend + seasonality + holidays), we aim to forecast stock prices and assist in making informed investment decisions.
 </p>
 
 ## Project Overview 💡
@@ -15,7 +15,7 @@ This project leverages historical stock market data to train a Prophet model. Th
 We use a publicly available dataset of historical stock prices, which includes data for various assets such as Apple Inc. (AAPL), Microsoft Corporation (MSFT), and Bitcoin (BTC). The dataset contains key features like:
 
 - **Opening Price:** The price of the asset at the start of the trading day.
-- **Closing Price:** The price of the asset at the end of the trading day.
+- **Adjusted Close Price:** The closing price of the asset adjusted for any corporate actions such as stock splits and dividends.
 - **Volume:** The total number of shares or units traded during the day.
 - **High Price:** The highest price at which the asset traded during the day.
 - **Low Price:** The lowest price at which the asset traded during the day.
@@ -56,15 +56,31 @@ To run the project locally, follow these steps:
   streamlit run app.py
   ``` 
 7. Interact with the app:
-  *Open your web browser and go to the URL provided by Streamlit (usually http://localhost:8501).
-  *Use the sidebar to input the stock ticker, date range, and forecast period.
-  *Click **Train Prophet Model** to train the model with your inputs.
-  *Once the model is trained successfully, you can generate forecasts and view forecast components by clicking the respective buttons.
+  - Open your web browser and go to the URL provided by Streamlit (usually http://localhost:8501).
+  - Use the sidebar to input the stock ticker, date range, and forecast period.
+  - Click **Train Prophet Model** to train the model with your inputs.
+  - Once the model is trained successfully, you can generate forecasts and view forecast components by clicking the respective buttons.
 
 ## Results and Discussion 📊
 In this section, we present the results of our stock market prediction experiments. We discuss the model's performance, its strengths, limitations, and potential areas of improvement. We also provide visualizations of the predicted stock prices and compare them with the actual prices.
 
 <img width="1028" alt="prediction image" src="image/streamlit_stock_price_prediction_image.png">
+
+- **Performance**
+
+  - **Handling Seasonality:** Prophet is particularly effective at capturing seasonal patterns (daily, weekly, yearly) in time series data, which can be valuable for modeling stock prices that exhibit such trends.
+  - **Ease of Use:** Prophet provides a user-friendly interface with minimal parameter tuning required. It offers a high level of interpretability with its decomposition into trend, seasonality, and holiday effects.
+
+- **Strengths**
+  - **Automatic Seasonality Detection:** Prophet automatically detects and includes seasonal effects, which is beneficial for capturing recurring patterns in stock prices.
+  - **Scalability:** It is designed to scale efficiently to handle large datasets, making it suitable for extensive historical stock price data.
+
+- **Limitation**
+  - **Simplistic Trend Modeling:** The linear or logistic trend assumption may not capture complex stock price behaviors influenced by sudden market shifts or non-linear trends.  
+
+- **Potential Areas of Improvement**
+  - **Incorporating Non-Linear Trends:** Enhancing Prophet to better handle non-linear trends and abrupt changes in stock prices would improve its performance. This could involve incorporating machine learning techniques or other advanced models that capture non-linear dynamics.
+  - **Integrating External Factors:** Developing methods to incorporate external variables (economic indicators, sentiment scores, etc.) directly into the Prophet framework could improve forecasting accuracy.  
 
 ## Contributing 🤝
 We welcome contributions to enhance the project and make it even more effective. If you have any suggestions, bug fixes, or new features to add, please submit a pull request. We appreciate your contributions!
