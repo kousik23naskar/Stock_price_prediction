@@ -1,0 +1,11 @@
+pandas
+numpy
+yfinance
+ta
+prophet
+statsmodels
+tensorflow>=2.12
+scikit-learn
+seaborn
+streamlit
+-e .
